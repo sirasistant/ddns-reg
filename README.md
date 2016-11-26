@@ -1,1 +1,1 @@
-MEAN2Template
+DDNS Register site
