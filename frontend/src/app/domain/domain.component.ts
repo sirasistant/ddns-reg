@@ -29,23 +29,27 @@ export class DomainComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.route.params.forEach(params => {
-            var id = params["domainId"];
-            var domain = this.contractService.domains.filter(domain => domain.name === id)[0];
-            if (domain) {
-                this.domain = domain;
-            }
-            this.generateIcon();
-
-            this.contractService.domainCountSubject.subscribe((count) => {
+        if(!this.contractService.web3){
+            this.router.navigate([""]);
+        }else{
+            this.route.params.forEach(params => {
+                var id = params["domainId"];
                 var domain = this.contractService.domains.filter(domain => domain.name === id)[0];
                 if (domain) {
                     this.domain = domain;
                 }
                 this.generateIcon();
-            })
 
-        });
+                this.contractService.domainCountSubject.subscribe((count) => {
+                    var domain = this.contractService.domains.filter(domain => domain.name === id)[0];
+                    if (domain) {
+                        this.domain = domain;
+                    }
+                    this.generateIcon();
+                })
+
+            });
+        }
     }
 
     openSubdomain(subdomain: SubDomain) {

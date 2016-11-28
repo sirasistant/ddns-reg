@@ -73,6 +73,17 @@ color: white;
     font-weight: lighter;
 }
 
+.home .no-web3{
+  padding-top: 250px;
+  text-align: center;
+}
+
+
+.home .no-web3 h1{
+  font-weight: lighter;
+  font-size: 3em;
+}
+
 .home .domains{
 min-height: 90%;
 padding-bottom: 50px;

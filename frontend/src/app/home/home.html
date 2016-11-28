@@ -21,6 +21,7 @@
     </div>
     <div class="row">
         <div class="domains">
+            <div *ngIf="web3">
             <h1>Registered domains</h1>
             <div class=" col-md-10 col-md-offset-1 domains-list">
                 <div class="col-sm-6 col-md-4" *ngFor="let domain of domains">
@@ -35,6 +36,10 @@
                         <div> <span class="glyphicon glyphicon-plus"></span></div>
                     </div>
                 </div>
+            </div>
+            </div>
+            <div class="no-web3" *ngIf="!web3">
+                <h1>Install Metamask browser extension to start using the domain registration site.</h1>
             </div>
         </div>
     </div>

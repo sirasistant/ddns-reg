@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
     @ViewChild('registerDomainForm') registerDomainForm: NgForm;
 
     domains: any[] = [];
+    web3:any;
 
     newDomainName: String;
 
@@ -24,6 +25,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.web3 = this.contractService.web3;
     }
 
     openRegisterModal() {

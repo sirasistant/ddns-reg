@@ -3,16 +3,21 @@ import { Domain, SubDomain } from "../model/domain";
 import { Observable, BehaviorSubject } from "rxjs";
 import { Http, Headers, Response, URLSearchParams } from "@angular/http";
 declare var web3: any;
+declare var window :any;
 
 @Injectable()
 export class ContractService {
+    web3:any = null;
+
     CONTRACT_ADDRESS = "0x653D5F476b457d0C83901e202499B07A84ae522c";
     domainCountSubject = new BehaviorSubject<Number>(0);
     domains: Domain[] = [];
     contract: any;
+    
 
     constructor(private _http: Http, private zone: NgZone) {
-        if (web3) {
+        if (window.web3) {
+            this.web3 = window.web3;
             web3.eth.getAccounts((err: any, list: string[]) => {
                 this._http.get("assets/contract.json").map((res) => {
                     return res.json();
