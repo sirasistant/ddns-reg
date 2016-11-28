@@ -13,14 +13,14 @@ import { HomeComponent } from './home/home.component';
 import { DomainComponent } from './domain/domain.component';
 
 import { ContractService } from './services/contract.service';
-
+import { MaterialModule } from '@angular/material';
 @NgModule({
   declarations: [AppComponent,HomeComponent,DomainComponent],
-  imports: [ModalModule, FormsModule, HttpModule, BrowserModule,
+  imports: [FormsModule, ModalModule,HttpModule, BrowserModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'domains/:domainId', component: DomainComponent }
-    ])
+    ]),MaterialModule.forRoot()
   ],
   providers: [ContractService,
     { provide: LocationStrategy, useClass: HashLocationStrategy },

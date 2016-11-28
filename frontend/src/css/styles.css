@@ -1,14 +1,394 @@
-/* Master Styles */
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+body{
+  margin: 0px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  font-style: normal; 
+  font-variant: normal;
 }
-h2, h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
+
+
+ .modal-header{
+      background-color: #112026;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.modal-header button{
+  color: white;
+}
+
+.modal-title{
+  color: white;
+}
+
+/*home*/
+
+
+.home header{
+  width: 100%;
+  height: 100%;
+  background: url("../assets/home-back.jpg") center center;
+  background-size: cover;
+
+}
+
+.home header .opacity{
+    width: 100%;
+  height: 100%;
+  position: relative;
+  background-color:rgba(0, 0, 0, 0.25);
+}
+
+.home header .marketing{
+  position: absolute;
+  top:24%;
+  left:50.4%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.home header .go-down{
+  position: absolute;
+  top:80%;
+  left:50.25%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.home header .marketing img{
+  width: 130px;
+}
+
+.home header .marketing h1{
+  font-weight: lighter;
+  font-size: 3em;
+  margin: 8px;
+}
+
+.home header .marketing h2{
+color: white;
+    background-color: #0D2D41;
+    font-size: 1.8em;
+    padding: 4px 8px;
+    margin: 0px;
+    font-weight: lighter;
+}
+
+.home .domains{
+min-height: 90%;
+padding-bottom: 50px;
+}
+
+.home .domains h1{
+  margin-top:80px;
+    margin-bottom:60px;
+  text-align: center;
   font-weight: lighter;
 }
-body {
-  margin: 2em;
+
+
+.home .domains-list .entry{
+  border-radius: 6px;
+  background-color: #F5F5F5;
+  cursor: pointer;
+  text-align: center;
+  position:relative;
+padding: 15px 0px 25px 0px;
+margin-bottom:20px;
+  border: 1px solid transparent;
+}
+
+.home .domains-list .entry:hover{
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+}
+
+.home .domains-list .entry:active{
+  background-color: #EEE;
+  border: 1px solid #DDD;
+}
+
+
+.home .domains-list .entry .name{
+font-weight: lighter;
+    font-size: 1.7em;
+    text-align: center;
+}
+.home .domains-list .entry .subdomains{
+    margin-top: 15px;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+        color:#474747;
+    }
+
+    .home .domains-list .entry .address{
+    padding-top: 10px;
+    font-style: italic;
+    color:#474747;
+    font-size: 0.8em;
+    }
+
+    .home .domains-list .entry.add{
+        height: 151px;
+            color:#474747;
+    }
+
+.home .domains-list .entry.add div{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.home .domains-list .entry.add span{
+    font-size: 2.8em;
+    color: #666;
+}
+
+
+/*Domain*/
+.domain header{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  -webkit-background-size: 100% 100% !important;
+  -moz-background-size: 100% 100% !important;
+  -o-background-size: 100% 100% !important;
+  background-size: 100% 100% !important;
+}
+
+.domain header .opacity{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255, 0.55);
+}
+
+.domain header .center{
+  position: absolute;
+  transform: translate(0%, -50%);
+  width: 100%;
+  top:50%;
+}
+
+.domain header .domain-icon{
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 5px 5px 2px grey;
+}
+
+.domain header h1{
+font-size: 4em;
+    margin-bottom: 60px;
+    font-weight: lighter;
+    word-wrap: break-word;
+}
+
+.domain header h2{
+  font-style: italic;
+      word-wrap: break-word;
+}
+
+.domain .subdomains-list {
+  padding-top: 20px;
+  min-height: 100%;
+  padding-bottom: 50px;
+}
+
+.domain .subdomains-list h1{
+  text-align: center;
+  font-weight: lighter;
+  font-size: 3em;
+  margin-bottom:60px;
+}
+
+
+.domain .subdomains-list .entry{
+  border-radius: 6px;
+  background-color: #F5F5F5;
+  cursor: pointer;
+  text-align: center;
+  position:relative;
+padding: 15px 0px 25px 0px;
+margin-bottom:20px;
+  border: 1px solid transparent;
+}
+
+.domain .subdomains-list .entry:hover{
+  background-color: #F3F3F3;
+  border-bottom: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+}
+
+.domain .subdomains-list .entry:active{
+  background-color: #EEE;
+  border: 1px solid #DDD;
+}
+
+
+.domain .subdomains-list .entry .name{
+font-weight: lighter;
+    font-size: 1.7em;
+    text-align: center;
+}
+.domain .subdomains-list .entry .type{
+    margin-top: 15px;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+        color:#474747;
+    }
+
+    .domain .subdomains-list .entry .value{
+    font-style: italic;
+    color:#474747;
+    font-size: 1.4em;
+    }
+
+    .domain .subdomains-list .entry.add{
+        height: 151px;
+            color:#474747;
+    }
+
+.domain .subdomains-list .entry.add div{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.domain .subdomains-list .entry.add span{
+    font-size: 2.8em;
+    color: #666;
+}
+
+.back-button{
+    position: absolute;
+    top: 0px;
+    left: 26px;
+    background-color: #4e92df;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 13px 20px;
+    text-align: center;
+    z-index: 1;
+    color:white;
+    cursor: pointer;
+}
+
+/*general*/
+.one-line{
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+.clearfix{
+  clear: both;
+}
+
+.btn{
+    background-color: #4e92df !important;
+    border: 0px  !important;
+    border-bottom: 3px solid #2e72bf  !important;
+}
+
+p.info{
+    color: #4e92df;
+    font-size: 1.2em;
+}
+
+.responsive-square{
+  text-align:left;
+  position:relative;
+  width:100%;
+}
+
+.responsive-square:after{
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.responsive-square .square-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.no-padding{
+  padding-left:0px !important;
+  padding-right:0px !important;
+}
+
+.ribbon-box{
+    background: url("../assets/ribbon.png") no-repeat center center;
+    display:inline-block;
+    background-size: contain;
+    width: 323px;
+    height: 156px;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.ribbon-box-small{
+      background: url("../assets/ribbon.png") no-repeat center center;
+    display:inline-block;
+    background-size: contain;
+    width: 323px;
+    height: 156px;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+
+.ribbon-box-small h1{
+  margin-top: 64px;
+  font-family: montserrat;
+  font-size: 29px;
+}
+
+
+.ribbon-box h1{
+  margin-top: 60px;
+      font-family: montserrat;
+}
+
+ .number-hover-box{
+  position: absolute;
+  color: white;
+  width: 25%;
+  height: 25%;
+  transform: translate(-50%, -50%);
+  background-color: #1ec183;
+  left: 10%;
+  top:10%;
+  text-align: center;
+  border-radius: 50%;
+}
+.number-hover-box span{
+  position: absolute;
+  transform: translate(-50%, -50%);
+      font-family: panefresco;
+  font-size:25px;
+  left: 50%;
+  top:50%;
+}
+
+
+ .number-circle-box{
+  display: inline-block;
+  color: white;
+  width:70px;
+  height: 70px;
+  background-color: #1ec183;
+  text-align: center;
+  border-radius: 50%;
+}
+.number-circle-box span{
+  position: absolute;
+  transform: translate(-50%, -50%);
+      font-family: panefresco;
+  font-size:50px;
+  top:50%;
 }

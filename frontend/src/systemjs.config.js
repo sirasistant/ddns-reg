@@ -10,8 +10,9 @@
     'rxjs':                       'lib/rxjs',
     'ng2-interceptors': 'lib/ng2-interceptors',
     'crypto-js':'lib/crypto-js',
-    'ng2-bootstrap':'lib/ng2-bootstrap',
-    'moment':'lib/moment'
+    'moment':'lib/moment',
+        'ng2-bootstrap':'lib/ng2-bootstrap',
+     '@angular/material': 'lib/@angular/material/material.umd.js'
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
@@ -27,7 +28,7 @@
     'platform-browser-dynamic',
     'router',
     'router-deprecated',
-    'upgrade',
+    'upgrade'
   ];
   // Individual files (~300 requests):
   function packIndex(pkgName) {
@@ -53,9 +54,11 @@
   packages['rxjs']= {
     main: 'bundles/Rx.js'
   };
-  packages['ng2-bootstrap']= {
+
+    packages['ng2-bootstrap']= {
     main: 'bundles/ng2-bootstrap.umd.min.js'
   };
+
   var config = {
     map: map,
     packages: packages

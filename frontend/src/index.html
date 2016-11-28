@@ -1,6 +1,6 @@
 <head>
   <base href="/">
-  <title>Angular 2 QuickStart</title>
+  <title>Ethereum DNS</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/styles.css">
@@ -17,22 +17,25 @@
   <script src="systemjs.config.js"></script>
 
   <script src="assets/transformicons.js"></script>
+  <script src="assets/blockies.min.js"></script>
   <script src="lib/jquery/dist/jquery.min.js"></script>
   <script src="lib/swipebox/src/js/jquery.swipebox.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script>
       System.import('app/main.js').catch(function(err){ console.error(err); });
     </script>
   <script src="bundle/app/main.js"> </script>
-  <!-- Bootstrap! -->
+  <!-- Angular material! -->
+ <link href="lib/@angular/material/core/theming/prebuilt/indigo-pink.css" rel="stylesheet">
+   <!-- Bootstrap! -->
   <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <!-- 3. Display the application -->
 
 <body>
   <div class="container-fluid">
-    <div class="">
-      <app>Preparing...</app>
-    </div>
+    <app>Preparing...</app>
   </div>
 </body>
 

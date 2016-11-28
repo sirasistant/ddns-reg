@@ -1,0 +1,68 @@
+<div class="home">
+    <div class="row">
+        <header>
+            <div class="opacity">
+                <div class="marketing">
+                    <img class="logo" src="assets/ethereum-logo.png">
+                    <h1>ethereum</h1>
+                    <h2>DOMAIN NAME SYSTEM</h2>
+                </div>
+                <div class="go-down">
+                    <span class="tcon-indicator" aria-label="scroll" aria-hidden="true">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="tcon-svgchevron" viewBox="0 0 30 36">
+                            <path class="a3" d="M0,0l15,16L30,0"></path>
+                            <path class="a2" d="M0,10l15,16l15-16"></path>
+                            <path class="a1" d="M0,20l15,16l15-16"></path>
+                        </svg>
+                        </span>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="row">
+        <div class="domains">
+            <h1>Registered domains</h1>
+            <div class=" col-md-10 col-md-offset-1 domains-list">
+                <div class="col-sm-6 col-md-4" *ngFor="let domain of domains">
+                    <div class="domain entry" (click)="openDomain(domain)">
+                        <span class="name one-line">{{domain.name}}</span>
+                        <p class="subdomains">{{domain.subdomains.length}} subdomain entries</p>
+                        <div class="address one-line">{{domain.owner}}</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="entry add" (click)="openRegisterModal()">
+                        <div> <span class="glyphicon glyphicon-plus"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div bsModal #registerDomainModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" (click)="registerDomainModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    <h4 class="modal-title">REGISTER DOMAIN</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="" #registerDomainForm="ngForm">
+                        <div class="form-group">
+                            <label class="control-label">Address:</label>
+                            <input name="name" maxlength="31" autocomplete="off" required class="form-control" [(ngModel)]="newDomainName" placeholder="Domain name">
+                        </div>
+                        <p class="info">
+                            The new domain name will be shown in the list once the transaction is confirmed by the ethereum network miners.
+                        </p>
+                        <button class="btn btn-success pull-right" (click)="registerDomain()">REGISTER</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

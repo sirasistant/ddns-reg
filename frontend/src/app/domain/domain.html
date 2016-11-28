@@ -1,0 +1,85 @@
+<div class="back-button" (click)="back();">
+    <span class="glyphicon glyphicon-home"> </span>
+</div>
+<div class="domain">
+    <div class="row">
+        <header [ngStyle]="{'background': backgroundData?'url('+backgroundData+') no-repeat center center ':''}">
+            <div class="opacity">
+                <div class="center ">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-offset-1">
+                                <div class="responsive-square">
+                                    <div class="square-content">
+                                        <img class="domain-icon" [src]="iconData">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-9 col-md-8 col-sm-6">
+                        <h1>{{domain?.name}}</h1>
+                        <h2>Owner: {{domain?.owner}}</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="row subdomains-list col-md-10 col-md-offset-1">
+            <h1>Registered subdomains</h1>
+            <div class="col-sm-6 col-md-4" *ngFor="let subdomain of domain?.subdomains">
+                <div class="subdomain entry" (click)="openSubdomain(subdomain)">
+                    <span class="name one-line">{{subdomain.name.length>0?subdomain.name+"."+domain.name:"Default"}}</span>
+                    <p class="type">Type: {{readableType(subdomain.type)}}</p>
+                    <div class="value one-line">{{subdomain.value}}</div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="entry add" (click)="openRegisterSubdomainModal()">
+                    <div> <span class="glyphicon glyphicon-plus"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div bsModal #createSubdomainModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" (click)="createSubdomainModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    <h4 class="modal-title">REGISTER SUBDOMAIN</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="" #registerSubdomainForm="ngForm">
+                        <div class="form-group">
+                            <label class="control-label">Subdomain:</label>
+                            <input name="name" maxlength="31" autocomplete="off" class="form-control" [(ngModel)]="subdomainName" placeholder="Address (optional)">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Type:</label>
+                            <select required name="type" class="form-control" [(ngModel)]="subdomainType">
+                                <option value="1">CNAME</option>
+                                <option value="2">IPV4</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Value:</label>
+                            <input required name="value" maxlength="31" autocomplete="off" class="form-control" [(ngModel)]="subdomainValue" placeholder="{{subdomainType==1?'URL':'XXX.XXX.XXX.XX'}}">
+                        </div>
+
+                        <p class="info">
+                            The new subdomain will be shown in the list once the transaction is confirmed by the ethereum network miners.
+                        </p>
+                        <button class="btn btn-success pull-right" (click)="registerSubdomain()">REGISTER</button>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
